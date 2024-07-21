@@ -1,23 +1,31 @@
 package kr.co.polycube.backendtest.lottos;
 
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
 public class LottoRequest {
 
     @Data
     public static class SaveDTO {
-        @NotEmpty
+        @NotNull
+        @Positive
         private Integer number1;
-        @NotEmpty
+        @NotNull
+        @Positive
         private Integer number2;
-        @NotEmpty
+        @NotNull
+        @Positive
         private Integer number3;
-        @NotEmpty
+        @NotNull
+        @Positive
         private Integer number4;
-        @NotEmpty
+        @NotNull
+        @Positive
         private Integer number5;
-        @NotEmpty
+        @NotNull
+        @Positive
         private Integer number6;
 
         public Lotto toEntity(){
