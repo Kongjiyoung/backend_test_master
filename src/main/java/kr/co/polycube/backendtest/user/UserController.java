@@ -22,7 +22,7 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}")
-    public ResponseEntity<?> findUser(@PathVariable Long id){
+    public ResponseEntity<?> findUser(@PathVariable("id") Long id){
 
         UserResponse.findUserDTO responseDTO = userService.findUser(id);
 
@@ -30,7 +30,7 @@ public class UserController {
     }
 
     @PutMapping("/users/{id}")
-    public ResponseEntity<?> updateUser(@PathVariable Long id, @Valid @RequestBody UserRequest.UpdateDTO requestDTO, Errors errors){
+    public ResponseEntity<?> updateUser(@PathVariable("id") Long id, @Valid @RequestBody UserRequest.UpdateDTO requestDTO, Errors errors){
 
         UserResponse.UpdateUserDTO responseDTO = userService.updateUser(id, requestDTO);
 
@@ -38,7 +38,7 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}?name=test!!")
-    public ResponseEntity<?> filterTest(@PathVariable Long id){
+    public ResponseEntity<?> filterTest(@PathVariable("id") Long id){
 
         return ResponseEntity.ok(null);
     }
