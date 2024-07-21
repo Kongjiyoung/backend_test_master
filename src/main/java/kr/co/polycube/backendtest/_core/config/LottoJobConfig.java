@@ -79,7 +79,7 @@ public class LottoJobConfig {
         };
     }
 
-    @Scheduled(cron = "0 37 1 * * SUN")
+    @Scheduled(cron = "0 0 0 * * SUN")
     public void runBatchJob() {
         try {
             JobLauncher jobLauncher = applicationContext.getBean(JobLauncher.class);
