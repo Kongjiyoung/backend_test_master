@@ -9,5 +9,11 @@ import org.springframework.stereotype.Service;
 public class UserService {
     private final UserRepository userRepository;
 
+    public UserResponse.SaveUserDTO saveUser(UserRequest.SaveUserDTO requestDTO) {
+
+        User user=userRepository.save(requestDTO.toEntity());
+
+        return new UserResponse.SaveUserDTO(user);
+    }
 
 }
