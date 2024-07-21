@@ -17,4 +17,10 @@ public class UserRequest {
                     .build();
         }
     }
+
+    @Data
+    public static class UpdateDTO {
+        @NotEmpty
+        private String name;
+    }
 }

@@ -26,4 +26,15 @@ public class UserResponse {
         }
     }
 
+    @Data
+    public static class UpdateUserDTO{
+        private Long Id;
+        private String name;
+
+        public UpdateUserDTO(User user) {
+            Id = user.getId();
+            name = user.getName();
+        }
+    }
+
 }

@@ -1,4 +1,5 @@
 package kr.co.polycube.backendtest.user;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.ResponseEntity;
@@ -28,4 +29,11 @@ public class UserController {
         return ResponseEntity.ok(responseDTO);
     }
 
+    @PutMapping("/users/{id}")
+    public ResponseEntity<?> updateUser(@PathVariable Long id, @Valid @RequestBody UserRequest.UpdateDTO requestDTO, Errors errors){
+
+        UserResponse.UpdateUserDTO responseDTO = userService.updateUser(id, requestDTO);
+
+        return ResponseEntity.ok(responseDTO);
+    }
 }
