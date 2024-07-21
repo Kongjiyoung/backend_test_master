@@ -1,6 +1,6 @@
 package kr.co.polycube.backendtest._core.config;
 
-import kr.co.polycube.backendtest.backendtestmaster._core.filter.URLFilter;
+import kr.co.polycube.backendtest._core.filter.URLFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
