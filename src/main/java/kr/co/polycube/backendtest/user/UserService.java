@@ -1,6 +1,7 @@
 package kr.co.polycube.backendtest.user;
 
 
+import kr.co.polycube.backendtest._core.errors.exception.Exception404;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,4 +17,10 @@ public class UserService {
         return new UserResponse.SaveUserDTO(user);
     }
 
+    public UserResponse.findUserDTO findUser(Long id) {
+
+        User user=userRepository.findById(id).orElseThrow(() -> new Exception404("존재하지 않는 유저 번호입니다"));
+
+        return new UserResponse.findUserDTO(user);
+    }
 }

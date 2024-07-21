@@ -15,4 +15,15 @@ public class UserResponse {
         }
     }
 
+    @Data
+    public static class findUserDTO{
+        private Long Id;
+        private String name;
+
+        public findUserDTO(User user) {
+            Id = user.getId();
+            name = user.getName();
+        }
+    }
+
 }

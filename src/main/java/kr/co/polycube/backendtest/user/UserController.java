@@ -20,5 +20,12 @@ public class UserController {
         return ResponseEntity.ok(responseDTO);
     }
 
+    @GetMapping("/users/{id}")
+    public ResponseEntity<?> findUser(@PathVariable Long id){
+
+        UserResponse.findUserDTO responseDTO = userService.findUser(id);
+
+        return ResponseEntity.ok(responseDTO);
+    }
 
 }
